@@ -38,7 +38,7 @@ public final class LinkedQueue<T> implements QueueInterface<T> {
 	 * @throws EmptyQueueException if the queue is empty. */
 	public T getFront() {
 		if (isEmpty())
-			throw new EmptyQueueException("Queue is empty");
+			throw new EmptyQueueException("Queue is empty!!");
 		else
 			return firstNode.getData();
 	} // end getFront
@@ -72,10 +72,15 @@ public final class LinkedQueue<T> implements QueueInterface<T> {
 	
 	/** Displays the queue */
 	public void displayQueue() {
-		Node<T> current = firstNode;
-		while (current != null) {
-			System.out.print(current.getData() + " ");
-			current = current.getNextNode();
+		
+		if (isEmpty()) {
+			System.out.println("Queue is empty!!");
+		} else {
+			Node<T> current = firstNode;
+			while (current != null) {
+				System.out.print(current.getData() + " ");
+				current = current.getNextNode();
+			}
 		}
 		System.out.println();
 	}

@@ -13,6 +13,8 @@ public class Application {
             System.out.println("Enter '1' to enqueue a customer");
             System.out.println("Enter '2' to dequeue a customer");
             System.out.println("Enter '3' to print the queue");
+            System.out.println("Enter '4' to get the first customer in the queue");
+            System.out.println("Enter '5' to clear the queue");
             System.out.println("Enter '0' to exit");
 
             int choice = scanner.nextInt();
@@ -39,6 +41,14 @@ public class Application {
                     System.out.print("Queue: ");
                     queue.displayQueue();
                     break;
+                case 4:
+                	System.out.println("The first person in the queue is: " + queue.getFront());
+                	queue.displayQueue();
+                	break;
+                case 5:
+                	System.out.println("Everyone decided to leave!!");
+                	queue.clear();
+                	break;
                 case 0:
                     System.out.println("Exiting the application.");
                     scanner.close();
